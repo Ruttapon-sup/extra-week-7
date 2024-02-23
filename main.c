@@ -8,24 +8,45 @@
 int main(int argc , char **argv) {
   NodePtr headPtr=NULL;
    NodePtr tailPtr=NULL;
-/* For struct Queue
-  Queue  q;
-   q. headPtr=NULL;
+   int a;
+  /*
+  enqueue(&headPtr,&tailPtr, 5);
+  enqueue(&headPtr,&tailPtr, 6);
+  enqueue(&headPtr,&tailPtr, 7);
+  a = dequeue(&headPtr,&tailPtr);
+  printf("%d\n",a);
+  a = dequeue(&headPtr,&tailPtr);
+  printf("%d\n",a);
+  */
+
+  
+ struct Queue;
+  Queue q;
+  int b;
+   q.headPtr=NULL;
    q.tailPtr=NULL;
    q.size=0;
+/*
+   enqueue_struct(&q,5);
+   enqueue_struct(&q,6);
+   b = dequeue_struct(&q);
+   printf("%d\n",b);
+   b = dequeue_struct(&q);
+   printf("%d\n",b);
 */
    int i,x;
-   
+
 
  for(i=1;i<argc;i++){
         if(strcmp(argv[i],"x")==0){
-            x=dequeue(&headPtr,&tailPtr);
+            x=dequeue_struct(&q);
             printf("dequeing %d\n",x);
         }
         else {
-       enqueue_struct(&headPtr,&tailPtr, atoi(argv[i]));
+       enqueue_struct(&q, atoi(argv[i]));
            
         }
  }
+
   return 0;
 }
